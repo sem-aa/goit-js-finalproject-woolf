@@ -31,10 +31,12 @@ const handleOpenModal = (e) => {
         alt=${e.target.getAttribute("alt")}
         width=800px
       />
-    </div>`
+    </div>`,
+    {
+      onClose: () => document.removeEventListener("keydown", handleKeyPress),
+    }
   );
   modalInstance.show();
-
   document.addEventListener("keydown", handleKeyPress);
 };
 
@@ -43,7 +45,6 @@ const handleKeyPress = (e) => {
     if (e.key === "Escape") {
       modalInstance.close();
       modalInstance = null;
-      document.removeEventListener("keydown", handleKeyPress);
     }
   }
 };

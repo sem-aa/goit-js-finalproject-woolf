@@ -33,11 +33,12 @@ const handleOpenModal = (e) => {
       />
     </div>`,
     {
+      onOpen: () => document.addEventListener("keydown", handleKeyPress),
       onClose: () => document.removeEventListener("keydown", handleKeyPress),
     }
   );
   modalInstance.show();
-  document.addEventListener("keydown", handleKeyPress);
+  
 };
 
 const handleKeyPress = (e) => {

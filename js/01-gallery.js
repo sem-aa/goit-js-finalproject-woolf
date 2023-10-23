@@ -33,7 +33,7 @@ const handleOpenModal = (e) => {
       />
     </div>`,
     {
-      onOpen: () => document.addEventListener("keydown", handleKeyPress),
+      onShow: () => document.addEventListener("keydown", handleKeyPress),
       onClose: () => document.removeEventListener("keydown", handleKeyPress),
     }
   );
